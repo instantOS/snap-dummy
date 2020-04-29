@@ -11,7 +11,7 @@ if ! confirm "are you sure you want to enable snap support?"; then
     echo "good choice, but that's just my opinion..."
     exit
 fi
-
+clear
 sudo pacman -R --noconfirm snap-dummy
 sudo pacman -S --noconfirm snapd
 sudo systemctl start snapd.socket
