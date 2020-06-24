@@ -14,8 +14,8 @@ fi
 
 clear
 
+yay -S snapd || exit
 sudo pacman -R --noconfirm snap-dummy
-sudo pacman -S --noconfirm snapd
 
 sudo systemctl enable snapd.socket
 sudo systemctl start snapd.socket
