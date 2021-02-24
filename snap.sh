@@ -17,8 +17,9 @@ clear
 yay -S snapd || exit
 sudo pacman -R --noconfirm snap-dummy
 
-sudo systemctl enable snapd.socket
-sudo systemctl start snapd.socket
+sudo systemctl enable --now snapd.socket
+# make pamac show snaps
+echo 'EnableSnap' | sudo tee -a /etc/pamac.conf
 
 sleep 2
 if confirm "a reboot is required. would you like to reboot now?"; then
